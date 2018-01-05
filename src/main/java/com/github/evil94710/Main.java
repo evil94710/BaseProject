@@ -24,7 +24,7 @@ IOException{
         public String arrTime[200]; // 營業時間
         public String arrClass[200];// 類別
         while(true){
-            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.選擇隨機選擇4.新增資訊5.離開\n");
+            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
             int choose = keyboard.nextInt();
             switch(choose) {
                 case 1:

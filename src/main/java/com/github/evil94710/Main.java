@@ -1,7 +1,10 @@
 package com.github.evil94710;
 
 import java.util.Scanner;
+/*  String arrName[200]
 
+
+*/
 public class Main {
     public static void main(String args[]){
 

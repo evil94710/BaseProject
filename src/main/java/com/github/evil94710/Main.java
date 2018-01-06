@@ -35,19 +35,17 @@ IOException{
                         String name = scn.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
-                        int check = people.checkShopName(name,arrName);
-                        if (check == -1) {
+                        int num = people.checkShopName(name,arrName);
+                        if (num == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
                         } else {
-                            System.out.println("店家名稱:" + arrName[check]);
-                            System.out.println("尖峰人潮時間:" + arrTime[check]);
+                            System.out.println("店家名稱:" + arrName[num]);
+                            System.out.println("尖峰人潮時間:" + arrTime[num]);
                         }
                         System.out.println("是否離開此功能? Y/N");
                         String exit = scn.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
                             break;
-                        } else {
-                            continue;
                         }
                     }
                     break;
@@ -61,7 +59,7 @@ IOException{
                     while(true){
 
                         while (true) {
-                            System.out.print:("請輸入店家名稱:");
+                            System.out.print("請輸入店家名稱:");
                             String name = keyboard.nextLine();
 
                             if (name.equals(""))

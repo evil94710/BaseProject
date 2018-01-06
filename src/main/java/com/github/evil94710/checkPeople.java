@@ -12,14 +12,15 @@ public class checkPeople {
         return shopName;
     }
 
-    public boolean checkShopName(String shopName){
-        for (String element:name) {
-            if (element.equals(shopName)) {
-                return true;
+    public int checkShopName(String shopName,String[] arrName){
+        for (int i = 0 ; i < 200 ; i++) {
+            if (arrName[i].equals(shopName)) {
+                return i;
             }
         }
-        return false;
+        return -1;
     }
+
 
 
 }

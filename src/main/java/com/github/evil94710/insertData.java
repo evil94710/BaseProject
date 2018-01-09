@@ -20,7 +20,7 @@ public class insertData{
 
     }
 
-    public boolean checkList(Sting ...arrName){
+    public boolean checkList(String... arrName){
 
         counting = setCounting;
 
@@ -66,7 +66,7 @@ public class insertData{
         data = scn.nextLine();
     }
 
-    public void getRushtime(){
+    public void getRush(){
         System.out.print("請輸入該店家尖峰時間: ");
         rushtime = scn.nextLine();
     }
@@ -88,7 +88,7 @@ public class insertData{
         arrData[count] =  data;
     }
 
-    public void setRushtime(String ...arrRush){
+    public void setRush(String ...arrRush){
         arrRush[count] = rushtime;
     }
 

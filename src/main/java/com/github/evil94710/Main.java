@@ -13,13 +13,13 @@ IOException{
         int count = 0;
         FileReader file = new FileReader("list.txt");
         BufferedReader br = new BufferedReader(file);
-        Sanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         while(br.ready()){
             System.out.println(br.readLine());
         }
         public String  arrName[200]; //  店家名稱
         public String arrGreat[200];  //  評價
-        public Stirng arrData[200]; // 店家資訊
+        public String arrData[200]; // 店家資訊
         public String arrRush[200]; // 尖峰時間
         public String arrTime[200]; // 營業時間
         public String arrClass[200];// 類別
@@ -35,19 +35,17 @@ IOException{
                         String name = scn.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
-                        boolean check = people.checkShopName(name);
-                        if (check == true) {
-                            System.out.println("店家名稱:" +);
-                            System.out.println("尖峰人潮時間:" +);
-                        } else {
+                        int num = people.checkShopName(name,arrName,arrRush);
+                        if (num == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
-                        }
-                        System.out.println("是否離開此功能:(yes/no)");
-                        String exit = scn.nextLine();
-                        if (exit.equalsIgnoreCase("yes")) {
-                            break;
                         } else {
-                            continue;
+                            System.out.println("店家名稱:" + people.getShopName());
+                            System.out.println("尖峰人潮時間:" + people.getRushTime());
+                        }
+                        System.out.println("是否離開此功能? Y/N");
+                        String exit = scn.nextLine();
+                        if (exit.equalsIgnoreCase("Y")) {
+                            break;
                         }
                     }
                     break;
@@ -61,7 +59,7 @@ IOException{
                     while(true){
 
                         while (true) {
-                            System.out.print:("請輸入店家名稱:");
+                            System.out.print("請輸入店家名稱:");
                             String name = keyboard.nextLine();
 
                             if (name.equals(""))
@@ -88,7 +86,7 @@ IOException{
 
                                 System.out.println("是否新增資料: Y / N");
                                 ans = keyboard.nextLine();
-                                if (ans.equalsIgnoreCase(Y))
+                                if (ans.equalsIgnoreCase("Y"))
                                     break;
                             }
 
@@ -101,7 +99,7 @@ IOException{
 
                             System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
                             ans = keyboard.nextLine();
-                            if (ans.equalsIgnoreCase(Y))
+                            if (ans.equalsIgnoreCase("Y"))
                                 break;
 
                         } else {
@@ -109,7 +107,7 @@ IOException{
                             System.out.println("是否新增名單: Y / N");
                             ans = keyboard.nextLine();
 
-                            if (ans.equalsIgnoreCase(Y)) {
+                            if (ans.equalsIgnoreCase("Y")) {
 
                                 while (true) {
 
@@ -121,7 +119,7 @@ IOException{
 
                                     System.out.println("是否新增資料: Y / N");
                                     ans = keyboard.nextLine();
-                                    if (ans.equalsIgnoreCase(Y))
+                                    if (ans.equalsIgnoreCase("Y"))
                                         break;
                                 }
 
@@ -136,7 +134,7 @@ IOException{
 
                                 System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
                                 ans = keyboard.nextLine();
-                                if (ans.equalsIgnoreCase(Y))
+                                if (ans.equalsIgnoreCase("Y"))
                                     break;
 
                             } else {

@@ -3,6 +3,7 @@ package com.github.evil94710;
 public class checkPeople {
 
     private String shopName;
+    private String rushTime;
 
     public void setShopName(String shopName){
         this.shopName = shopName;
@@ -12,13 +13,21 @@ public class checkPeople {
         return shopName;
     }
 
-    public boolean checkShopName(String shopName){
-        for (String element:name) {
-            if (element.equals(shopName)) {
-                return true;
+    public void setRushTime(String rushTime){
+        this.rushTime = rushTime;
+    }
+
+    public String getRushTime() {
+        return rushTime;
+    }
+    public int checkShopName(String shopName,String[] arrName,String[] arrRush){
+        for (int i = 0 ; i < 200 ; i++) {
+            if (arrName[i].equals(shopName)) {
+                setRushTime(arrRush[i]);
+                return i;
             }
         }
-        return false;
+        return -1;
     }
 
 

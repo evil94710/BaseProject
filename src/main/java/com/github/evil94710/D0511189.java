@@ -2,7 +2,6 @@ package com.github.evil94710;
 
 import java.util.Scanner;
 public class D0511189 {
-    public static void main(String[] args) {
         int i=0,j=0,k=0,s,p,count,Array[20];
         Scanner keyboard = new Scanner(System.in);
         System.out.println("1.午餐"+"\n"+"2.晚餐"+"\n"+"3.點心"+"\n"+"4.宵夜"+"\n");
@@ -11,7 +10,7 @@ public class D0511189 {
         if(condition<1||condition>4){
             System.out.print("輸入錯誤"+"\n");
         }
-        else if(condition==" "){
+        else if(condition==""){
             System.out.print("輸入不能為空白哦"+"\n");
         }
         else{
@@ -56,5 +55,4 @@ public class D0511189 {
             if(k==5)
                 break;
         }
-    }
 }

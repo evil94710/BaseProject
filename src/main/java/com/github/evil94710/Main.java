@@ -10,19 +10,19 @@ import java.util.Random;
 public class Main {
     public static void main(String args[]) throws
 IOException{
-        int count = 20;
+        int count = 0;
         FileReader file = new FileReader("list.txt");
         BufferedReader br = new BufferedReader(file);
-        Scanner keyboard = new Scanner(System.in);
+        Sanner keyboard = new Scanner();
         while(br.ready()){
             System.out.println(br.readLine());
         }
         public String  arrNamr[200]; //  店家名稱
-        public String arrGreat[200]; //  評價
-        public String arrData[200]; // 店家資訊
+        public String arrGreat[200];  //  評價
+        public Stirng arrData[200]; // 店家資訊
         public String arrRush[200]; // 尖峰時間
         public String arrTime[200]; // 營業時間
-        public String arrClass[200]; // 類別
+        public String arrClass[200];// 類別
         while(true){
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.選擇隨機選擇4.新增資訊5.離開\n");
             int choose = keyboard.nextInt();
@@ -55,8 +55,7 @@ IOException{
                     break;
                 case 3:
                     Random ran = new Random();
-                    System.out.println(ran.nextInt(count));
-
+                    System.out.println(ran.nextInt(20));
                     break;
                 case 4:
                     break;

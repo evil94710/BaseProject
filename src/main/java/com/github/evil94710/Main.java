@@ -35,12 +35,12 @@ IOException{
                         String name = scn.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
-                        int num = people.checkShopName(name,arrName);
+                        int num = people.checkShopName(name,arrName,arrRush);
                         if (num == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
                         } else {
-                            System.out.println("店家名稱:" + arrName[num]);
-                            System.out.println("尖峰人潮時間:" + arrTime[num]);
+                            System.out.println("店家名稱:" + people.getShopName());
+                            System.out.println("尖峰人潮時間:" + people.getRushTime());
                         }
                         System.out.println("是否離開此功能? Y/N");
                         String exit = scn.nextLine();

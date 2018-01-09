@@ -2,7 +2,8 @@ package com.github.evil94710;
 
 public class checkPeople {
 
-    private String shopName;
+    public String shopName;
+    public String rushTime;
 
     public void setShopName(String shopName){
         this.shopName = shopName;
@@ -12,15 +13,22 @@ public class checkPeople {
         return shopName;
     }
 
-    public int checkShopName(String shopName,String[] arrName){
+    public void setRushTime(String rushTime){
+        this.rushTime = rushTime;
+    }
+
+    public String getRushTime() {
+        return rushTime;
+    }
+    public int checkShopName(String shopName,String[] arrName,String[] arrRush){
         for (int i = 0 ; i < 200 ; i++) {
             if (arrName[i].equals(shopName)) {
+                setRushTime(arrRush[i]);
                 return i;
             }
         }
         return -1;
     }
-
 
 
 }

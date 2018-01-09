@@ -2,8 +2,8 @@ package com.github.evil94710;
 
 public class checkPeople {
 
-    public String shopName;
-    public String rushTime;
+    private String shopName;
+    private String rushTime;
 
     public void setShopName(String shopName){
         this.shopName = shopName;

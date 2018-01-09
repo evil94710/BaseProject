@@ -91,7 +91,7 @@ IOException{
                             while (true){
                                 insert.getGreat();
                                 insert.getData();
-                                insert.getRushtime();
+                                insert.getRush();
                                 insert.getTime();
 
                                 System.out.println("是否新增資料: Y / N");
@@ -124,7 +124,7 @@ IOException{
                                     insert.motd();
                                     insert.getGreat();
                                     insert.getData();
-                                    insert.getRushtime();
+                                    insert.getRush();
                                     insert.getTime();
 
                                     System.out.println("是否新增資料: Y / N");

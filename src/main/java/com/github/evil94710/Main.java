@@ -2,24 +2,35 @@ package com.github.evil94710;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.StreamTokenizer;
 import java.util.Scanner;
 import java.util.Random;
+
 
 /*  String arrName[200]*/
 
 public class Main {
-    public static void main(String args[]) throws
-IOException{
+    public static void main(String args[]) throws IOException {
         int count = 0;
         FileReader file = new FileReader("list.txt");
         BufferedReader br = new BufferedReader(file);
-        Sanner keyboard = new Scanner();
+        String s;
+        String[] array = new String[10];
+        int i = 0;
+        do {
+            s = br.readLine();
+            array[i] = s;
+            i++;
+        }while(s!=null);
+        System.out.println("End of reading loop");
+        Scanner keyboard = new Scanner(System.in);
         while(br.ready()){
             System.out.println(br.readLine());
         }
         public String  arrNamr[200]; //  店家名稱
         public String arrGreat[200];  //  評價
-        public Stirng arrData[200]; // 店家資訊
+        public String arrData[200]; // 店家資訊
         public String arrRush[200]; // 尖峰時間
         public String arrTime[200]; // 營業時間
         public String arrClass[200];// 類別
@@ -55,7 +66,7 @@ IOException{
                     break;
                 case 3:
                     Random ran = new Random();
-                    System.out.println(ran.nextInt(20));
+                    System.out.println(ran.nextInt(count));
                     break;
                 case 4:
                     break;

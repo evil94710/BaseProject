@@ -50,7 +50,17 @@ IOException{
                     }
                     break;
                 case 2:
-
+                    D0511189 search=new D0511189();
+                    Scanner keyboard = new Scanner(System.in);
+                    while(true){
+                        search.setfunction();
+                        search.determine(search.getfunction());
+                        System.out.println("是否離開此功能? Y/N");
+                        String exit = keyboard.nextLine();
+                        if (exit.equalsIgnoreCase("Y")) {
+                            break;
+                        }
+                    }
                     break;
                 case 3:
                     insertData insert = new insertData();

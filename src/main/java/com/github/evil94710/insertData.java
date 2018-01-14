@@ -1,5 +1,7 @@
 package com.github.evil94710;
 
+import java.util.Scanner;
+
 public class insertData{
     private String name;
     private String great;

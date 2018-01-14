@@ -30,9 +30,8 @@ IOException{
                 case 1:
                     checkPeople people = new checkPeople();
                     while (true) {
-                        Scanner scn = new Scanner(System.in);
                         System.out.println("enter the shop name:");
-                        String name = scn.nextLine();
+                        String name = keyboard.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
                         int num = people.checkShopName(name,arrName,arrRush);
@@ -43,7 +42,7 @@ IOException{
                             System.out.println("尖峰人潮時間:" + people.getRushTime());
                         }
                         System.out.println("是否離開此功能? Y/N");
-                        String exit = scn.nextLine();
+                        String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
                             break;
                         }

@@ -122,11 +122,11 @@ public class Main {
                     checkPeople people = new checkPeople();
                     while (true) {
                         System.out.println("enter the shop name:");
-                        String name = keyboard.nextLine();
+                        String name = keyboard.next();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
-                        num = people.checkShopName(name,arrName,arrRush);
-                        if (num == -1) {
+                        int number = people.checkShopName(name,arrName,arrRush);
+                        if (number == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
                         } else {
                             System.out.println("店家名稱:" + people.getShopName());

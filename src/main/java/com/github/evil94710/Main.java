@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.lang.*;
 
 public class Main {
-    public static void main(String args[]) throws IOException{
+    public static void main(String args[]) throws
+IOException{
         int count = 0;
-        ReadFile.class.getResourceAsStream("C:/Users/user/IdeaProjects/BaseProject/src/main/java/com/github/evil94710/list.txt");
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         String line,tempString = null;
         String[] tempArray = new String[200];
-        ArrayList myList = new ArrayList();
+        ArrayList<String> myList = new ArrayList<String>();
         while((line=br.readLine())!=null) {
             tempString = line;
             tempArray = tempString.split(",");
@@ -25,6 +25,9 @@ public class Main {
             }
         }
 
+        for(int i = 0;i<tempArray.length;i++) {
+            System.out.println(tempArray[i]);
+        }
         int k = myList.size()/9,num = 0;
         String[][] list = new String[k][9];
         for(int i = 0;i < k;i++) {
@@ -39,7 +42,6 @@ public class Main {
             }
         }
         file.close();
-
         String[] arrName = new String[200];   //  店家名稱
         String[] arrGreat = new String[200];  //  評價
         String[] arrData = new String[200];   // 店家資訊
@@ -195,8 +197,7 @@ public class Main {
                     break;
                 case 4:
                     Random ran = new Random();
-                    System.out.println(ran.nextInt(count));
-                    
+                    System.out.println(ran.nextInt(20));
                     break;
                 case 5:
                     break;

@@ -4,15 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.Random;
-import java.io.FileReader;
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.*;
-
 /*  String arrName[200]*/
 
 public class Main {
@@ -56,6 +51,7 @@ IOException{
         public String arrTime[200]; // 營業時間
         public String arrClass[200];// 類別
         while(true){
+            Scanner keyboard = new Scanner(System.in);
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
             int choose = keyboard.nextInt();
             switch(choose) {

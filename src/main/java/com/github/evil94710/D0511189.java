@@ -14,8 +14,8 @@ public class D0511189 {
         return condition;
     }
     public void determine(int condition){
-        int i=0,j=0,p,k, count;
-        String array[20];
+        int i=0,j=0,p,k,count;
+        String[]  arr=new String[200];
         if(condition<1||condition>4){
             System.out.print("輸入錯誤"+"\n");
         }
@@ -27,7 +27,7 @@ public class D0511189 {
                 case 1:
                     for (p = 0; p < count; p++) {
                         if (arrClass[p].charat[0].equals("1")) {
-                            array[i] = arrName[p];
+                            arr[i] = arrName[p];
                             i++;
                         }
                     }
@@ -35,7 +35,7 @@ public class D0511189 {
                 case 2:
                     for (p = 0; p < count; p++) {
                         if (arrClass[p].charat[1].equals("1")) {
-                            array[i] = arrName[p];
+                            arr[i] = arrName[p];
                             i++;
                         }
                     }
@@ -43,7 +43,7 @@ public class D0511189 {
                 case 3:
                     for (p = 0; p < count; p++) {
                         if (arrClass[p].charat[2].equals("1")) {
-                            array[i] = arrName[p];
+                            arr[i] = arrName[p];
                             i++;
                         }
                     }
@@ -51,14 +51,14 @@ public class D0511189 {
                 case 4:
                     for (p = 0; p < count; p++) {
                         if (arrClass[p].charat[3].equals("1")) {
-                            array[i] = arrName[p];
+                            arr[i] = arrName[p];
                             i++;
                         }
                     }
                     break;
             }
-            for(j=0;j<array.length;j++){
-                System.out.println(array[j]);
+            for(j=0;j<arr.length;j++){
+                System.out.println(arr[j]);
                 k++;
                 if(k==5)
                     break;

@@ -64,11 +64,12 @@ IOException{
                     insertData insert = new insertData();
                     String ans;
 
+                    String name;
                     while(true){
 
                         while (true) {
                             System.out.print("請輸入店家名稱:");
-                            String name = keyboard.nextLine();
+                            name = keyboard.nextLine();
 
                             if (name.equals(""))
                                 System.out.println("輸入錯誤");
@@ -105,7 +106,7 @@ IOException{
                             insert.setRush(arrRush);
                             insert.setTime(arrTime);
 
-                            System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
+                            System.out.print("新增新增資料成功, 是否離開此功能? Y/N");
                             ans = keyboard.nextLine();
                             if (ans.equalsIgnoreCase("Y"))
                                 break;
@@ -138,7 +139,7 @@ IOException{
                                 insert.setRush(arrRush);
                                 insert.setTime(arrTime);
 
-                                count = setCount();
+                                count = insert.setCounting(1);
 
                                 System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
                                 ans = keyboard.nextLine();

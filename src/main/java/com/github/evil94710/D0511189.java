@@ -1,6 +1,6 @@
 package com.github.evil94710;
 
-import java.util.Scanner;
+    import java.util.Scanner;
 public class D0511189 {
     private int condition;
     Scanner keyboard = new Scanner(System.in);

@@ -1,4 +1,6 @@
 package com.github.evil94710;
+import com.sun.java.util.jar.pack.Package;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -6,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.*;
+/*  String arrName[200]*/
 
 
 public class Main {
@@ -42,7 +45,7 @@ public class Main {
                 System.out.println(list[i][j]);
             }
         }
-        file.close();
+
         String[] arrName = new String[200];   //  店家名稱
         String[] arrGreat = new String[200];  //  評價
         String[] arrData = new String[200];   // 店家資訊
@@ -285,6 +288,7 @@ public class Main {
                     break;
             }
         }
+        file.close();
     }
     public static boolean exit(){
         Scanner keyboard = new Scanner(System.in);

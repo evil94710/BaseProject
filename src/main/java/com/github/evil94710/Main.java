@@ -10,7 +10,7 @@ import java.lang.*;
 
 public class Main {
     public static void main(String args[]) throws
-IOException{
+        Exception,IOException{
         int count = 20;
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
@@ -51,7 +51,7 @@ IOException{
         boolean exit;
         while(true){
             Scanner keyboard = new Scanner(System.in);
-            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
+            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開\n");
             int choose = keyboard.nextInt();
             switch(choose) {
                 case 1:
@@ -205,6 +205,16 @@ IOException{
                     }
                     break;
                 case 5:
+                    while (true){
+                        googleMap openMap = new googleMap();
+                        openMap.openGoogleMap();
+                        exit = exit();
+                        if(exit){
+                            break;
+                        }
+                    }
+                    break;
+                case 6:
                     break;
             }
         }
@@ -221,3 +231,5 @@ public static boolean exit(){
     }
     return false;
 }
+
+public static

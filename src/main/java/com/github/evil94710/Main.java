@@ -23,7 +23,8 @@ IOException{
         String[] arrRush = new String[200];   // 尖峰時間
         String[] arrTime = new String[200];   // 營業時間
         String[] arrClass = new String[200];  // 類別
-
+        
+        file.close();
         while(true){
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
             int choose = keyboard.nextInt();

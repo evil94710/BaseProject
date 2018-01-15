@@ -15,6 +15,7 @@ public class Main {
         //ReadFile.class.getResourceAsStream("list.txt");
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
+        System.out.println("所在目錄: " + file.getEncoding());
         String line,tempString;
         String[] tempArray = new String[200];
         ArrayList<String> myList = new ArrayList<String>();
@@ -259,8 +260,7 @@ public class Main {
                 case 4:
                     while (true){
                         D0588491 randomSelect = new D0588491();
-                        String rand = randomSelect.randomShop(count);
-                        //System.out.println(randomSelect.getShopName(arrName,rand));
+                        randomSelect.randomShop(count,arrName);
                         exit = exit();
                         if(exit){
                             break;

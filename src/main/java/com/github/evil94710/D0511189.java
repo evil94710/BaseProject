@@ -16,7 +16,7 @@ public class D0511189 {
         if(condition<1||condition>4){
             System.out.print("輸入錯誤"+"\n");
         }
-        else if(Condition==""){
+        else if(Condition.equals("")){
             System.out.print("輸入不能為空白哦"+"\n");
         }
         else {

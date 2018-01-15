@@ -66,9 +66,9 @@ IOException{
                     insertData insert = new insertData();
                     String ans;
                     String name;
-                    int flag ;
+                    int counting;
+                    boolean flag;
                     while(true){
-
                         while (true) {
                             System.out.print("請輸入店家名稱:");
                             name = keyboard.nextLine();
@@ -82,7 +82,7 @@ IOException{
                         boolean check = insert.checkList(arrName);
                         if (check) {
 
-                            int counting = insert.setCounting();
+                            counting = insert.setCounting();
                             System.out.println(name+" (原資料)");
                             System.out.println("評價:"+arrGreat[counting]);
                             System.out.println("資訊:"+arrData[counting]);
@@ -97,7 +97,7 @@ IOException{
 
                                 System.out.println("是否新增資料: Y / N");
                                 ans = keyboard.nextLine();
-                                flag = 1;
+
                                 if (ans.equalsIgnoreCase("Y"))
                                     break;
                             }
@@ -120,7 +120,7 @@ IOException{
                             ans = keyboard.nextLine();
 
                             if (ans.equalsIgnoreCase("Y")) {
-
+                                flag = true;
                                 while (true) {
 
                                     insert.motd();
@@ -131,7 +131,6 @@ IOException{
 
                                     System.out.println("是否新增資料: Y / N");
                                     ans = keyboard.nextLine();
-                                    flag = 2;
                                     if (ans.equalsIgnoreCase("Y"))
                                         break;
                                 }
@@ -143,11 +142,10 @@ IOException{
                                 insert.setRush(arrRush);
                                 insert.setTime(arrTime);
 
-
-                                if (flag == 1)
-                                      ;
-                                else
+                                if (flag)
                                     counting = insert.setCounting(1);
+                                else
+                                    counting = insert.setCounting();
 
                                 System.out.println("剛剛所新增之資料:");
                                 System.out.println("店家名稱:" + name);

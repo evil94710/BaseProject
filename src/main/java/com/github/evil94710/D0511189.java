@@ -10,7 +10,7 @@ public class D0511189 {
         condition = keyboard.nextInt();
     }
     public void determine(String[] arrName,String[] arrClass,int count){
-        int i=0,j=0,p,k;
+        int i=0,j=0,p,k=0;
         String[]  arr=new String[200];
         String Condition= String.valueOf(condition);
         if(condition<1||condition>4){

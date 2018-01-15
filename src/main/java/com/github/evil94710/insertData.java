@@ -1,16 +1,18 @@
 package com.github.evil94710;
 
+import java.util.Scanner;
+
 public class insertData{
     private String name;
     private String great;
     private String data;
-    private String rushtime;
+    private String rushTime;
     private String time;
     private int count;
     private int counting = 0;
     Scanner scn = new Scanner(System.in);
 
-    public void getShopname(String name){
+    public void getShopName(String name){
         this.name = name;
     }
 
@@ -20,9 +22,15 @@ public class insertData{
 
     }
 
-    public boolean checkList(Sting ...arrName){
+    public int setCounting(int num){
+        counting = count + num;
+        return counting;
 
-        counting = setCounting;
+    }
+
+    public boolean checkList(String... arrName){
+
+        counting = setCounting();
 
         for(String search : arrName){
 
@@ -52,9 +60,6 @@ public class insertData{
         this.count = count+1 ;
     }
 
-    public int setCount(){                        /*  新增  */
-            return count;
-        }
 
     public void getGreat(){
         System.out.print("請輸入該店家評價: ");
@@ -66,9 +71,9 @@ public class insertData{
         data = scn.nextLine();
     }
 
-    public void getRushtime(){
+    public void getRush(){
         System.out.print("請輸入該店家尖峰時間: ");
-        rushtime = scn.nextLine();
+        rushTime = scn.nextLine();
     }
 
     public void getTime(){
@@ -88,8 +93,8 @@ public class insertData{
         arrData[count] =  data;
     }
 
-    public void setRushtime(String ...arrRush){
-        arrRush[count] = rushtime;
+    public void setRush(String ...arrRush){
+        arrRush[count] = rushTime;
     }
 
     public void setTime(String ...arrTime){

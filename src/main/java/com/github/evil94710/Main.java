@@ -30,9 +30,8 @@ IOException{
                 case 1:
                     checkPeople people = new checkPeople();
                     while (true) {
-                        Scanner scn = new Scanner(System.in);
                         System.out.println("enter the shop name:");
-                        String name = scn.nextLine();
+                        String name = keyboard.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
                         int num = people.checkShopName(name,arrName,arrRush);
@@ -43,7 +42,7 @@ IOException{
                             System.out.println("尖峰人潮時間:" + people.getRushTime());
                         }
                         System.out.println("是否離開此功能? Y/N");
-                        String exit = scn.nextLine();
+                        String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
                             break;
                         }
@@ -51,10 +50,9 @@ IOException{
                     break;
                 case 2:
                     D0511189 search=new D0511189();
-                    Scanner keyboard = new Scanner(System.in);
                     while(true){
-                        search.setfunction();
-                        search.determine(search.getfunction());
+                        search.setFunction();
+                        search.determine(search.getFunction());
                         System.out.println("是否離開此功能? Y/N");
                         String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
@@ -66,11 +64,12 @@ IOException{
                     insertData insert = new insertData();
                     String ans;
 
+                    String name;
                     while(true){
 
                         while (true) {
                             System.out.print("請輸入店家名稱:");
-                            String name = keyboard.nextLine();
+                            name = keyboard.nextLine();
 
                             if (name.equals(""))
                                 System.out.println("輸入錯誤");
@@ -79,7 +78,7 @@ IOException{
                         }
 
                         boolean check = insert.checkList(arrName);
-                        if (check == true) {
+                        if (check) {
 
                             int counting = insert.setCounting();
                             System.out.println(name+" (原資料)");
@@ -107,7 +106,7 @@ IOException{
                             insert.setRush(arrRush);
                             insert.setTime(arrTime);
 
-                            System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
+                            System.out.print("新增新增資料成功, 是否離開此功能? Y/N");
                             ans = keyboard.nextLine();
                             if (ans.equalsIgnoreCase("Y"))
                                 break;
@@ -140,7 +139,7 @@ IOException{
                                 insert.setRush(arrRush);
                                 insert.setTime(arrTime);
 
-                                count = setCount();
+                                count = insert.setCounting(1);
 
                                 System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
                                 ans = keyboard.nextLine();

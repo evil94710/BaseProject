@@ -44,12 +44,13 @@ IOException{
             }
         }
 
-        public String  arrName[200]; //  店家名稱
-        public String arrGreat[200];  //  評價
-        public String arrData[200]; // 店家資訊
-        public String arrRush[200]; // 尖峰時間
-        public String arrTime[200]; // 營業時間
-        public String arrClass[200];// 類別
+        String[] arrName = new String[200];   //  店家名稱
+        String[] arrGreat = new String[200];  //  評價
+        String[] arrData = new String[200];   // 店家資訊
+        String[] arrRush = new String[200];   // 尖峰時間
+        String[] arrTime = new String[200];   // 營業時間
+        String[] arrClass = new String[200];  // 類別
+
         while(true){
             Scanner keyboard = new Scanner(System.in);
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
@@ -62,7 +63,7 @@ IOException{
                         String name = keyboard.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
-                        int num = people.checkShopName(name,arrName,arrRush);
+                        num = people.checkShopName(name,arrName,arrRush);
                         if (num == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
                         } else {
@@ -80,7 +81,7 @@ IOException{
                     D0511189 search=new D0511189();
                     while(true){
                         search.setFunction();
-                        search.determine(search.getFunction());
+                        search.determine(arrName,arrClass,count);
                         System.out.println("是否離開此功能? Y/N");
                         String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
@@ -91,8 +92,9 @@ IOException{
                 case 3:
                     insertData insert = new insertData();
                     String ans;
-
                     String name;
+                    int counting;
+
                     while(true){
 
                         while (true) {
@@ -108,7 +110,7 @@ IOException{
                         boolean check = insert.checkList(arrName);
                         if (check) {
 
-                            int counting = insert.setCounting();
+                            counting = insert.setCounting();
                             System.out.println(name+" (原資料)");
                             System.out.println("評價:"+arrGreat[counting]);
                             System.out.println("資訊:"+arrData[counting]);
@@ -134,7 +136,14 @@ IOException{
                             insert.setRush(arrRush);
                             insert.setTime(arrTime);
 
-                            System.out.print("新增新增資料成功, 是否離開此功能? Y/N");
+                            System.out.println("剛剛所新增之資料:");
+                            System.out.println("店家名稱:" + arrName[counting]);
+                            System.out.println("評價:" + arrGreat[counting]);
+                            System.out.println("資訊:"+arrData[counting]);
+                            System.out.println("尖峰時間:"+arrRush[counting]);
+                            System.out.println("營業時間:"+arrTime[counting]);
+
+                            System.out.print("新增資料成功, 是否離開此功能? Y/N");
                             ans = keyboard.nextLine();
                             if (ans.equalsIgnoreCase("Y"))
                                 break;
@@ -166,20 +175,27 @@ IOException{
                                 insert.setData(arrData);
                                 insert.setRush(arrRush);
                                 insert.setTime(arrTime);
-
+                                counting = insert.setCounting(1);
                                 count = insert.setCounting(1);
 
-                                System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
+
+                                System.out.println("剛剛所新增之資料:");
+                                System.out.println("店家名稱:" + name);
+                                System.out.println("評價:" + arrGreat[counting]);
+                                System.out.println("資訊:" + arrData[counting]);
+                                System.out.println("尖峰時間:" + arrRush[counting]);
+                                System.out.println("營業時間:" + arrTime[counting]);
+
+
+                                System.out.print("新增資料成功, 使否離開此功能? Y/N");
                                 ans = keyboard.nextLine();
                                 if (ans.equalsIgnoreCase("Y"))
                                     break;
-
-                            } else {
+                            }else {
                                 System.out.println("重新輸入店家名稱");
                             }
                         }
                     }
-
                     break;
                 case 4:
                     Random ran = new Random();

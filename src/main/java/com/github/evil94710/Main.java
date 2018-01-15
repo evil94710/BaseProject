@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.lang.*;
 
 public class Main {
-    public static void main(String args[]) throws
-IOException{
+    public static void main(String args[]) throws IOException{
         int count = 0;
+        ReadFile.class.getResourceAsStream("C:/Users/user/IdeaProjects/BaseProject/src/main/java/com/github/evil94710/list.txt");
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         String line,tempString = null;
         String[] tempArray = new String[200];
-        ArrayList<String> myList = new ArrayList<String>();
+        ArrayList myList = new ArrayList();
         while((line=br.readLine())!=null) {
             tempString = line;
             tempArray = tempString.split(",");
@@ -39,6 +39,7 @@ IOException{
             }
         }
         file.close();
+
         String[] arrName = new String[200];   //  店家名稱
         String[] arrGreat = new String[200];  //  評價
         String[] arrData = new String[200];   // 店家資訊
@@ -194,7 +195,8 @@ IOException{
                     break;
                 case 4:
                     Random ran = new Random();
-                    System.out.println(ran.nextInt(20));
+                    System.out.println(ran.nextInt(count));
+                    
                     break;
                 case 5:
                     break;

@@ -63,8 +63,8 @@ IOException{
                 case 3:
                     insertData insert = new insertData();
                     String ans;
-
                     String name;
+                    int flag ;
                     while(true){
 
                         while (true) {
@@ -95,6 +95,7 @@ IOException{
 
                                 System.out.println("是否新增資料: Y / N");
                                 ans = keyboard.nextLine();
+                                flag = 1;
                                 if (ans.equalsIgnoreCase("Y"))
                                     break;
                             }
@@ -128,6 +129,7 @@ IOException{
 
                                     System.out.println("是否新增資料: Y / N");
                                     ans = keyboard.nextLine();
+                                    flag = 2;
                                     if (ans.equalsIgnoreCase("Y"))
                                         break;
                                 }
@@ -139,9 +141,22 @@ IOException{
                                 insert.setRush(arrRush);
                                 insert.setTime(arrTime);
 
+
+                                if (flag == 1)
+                                      ;
+                                else
+                                    counting = insert.setCounting(1);
+
+                                System.out.println("剛剛所新增之資料:");
+                                System.out.println("店家名稱:" + name);
+                                System.out.println("評價:" + arrGreat[counting]);
+                                System.out.println("資訊:"+arrData[counting]);
+                                System.out.println("尖峰時間:"+arrRush[counting]);
+                                System.out.println("營業時間:"+arrTime[counting]);
+
                                 count = insert.setCounting(1);
 
-                                System.out.print("新增新增資料成功, 使否離開此功能? Y/N");
+                                System.out.print("新增資料成功, 使否離開此功能? Y/N");
                                 ans = keyboard.nextLine();
                                 if (ans.equalsIgnoreCase("Y"))
                                     break;

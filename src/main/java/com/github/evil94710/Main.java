@@ -43,11 +43,12 @@ public class Main {
             }
         }
         file.close();
-        String[] arrName = new String[200];   //  店家名稱
-        String[] arrGreat = new String[200];  //  評價
-        String[] arrData = new String[200];   // 店家資訊
-        String[] arrRush = new String[200];   // 尖峰時間
-        String[] arrTime = new String[200];   // 營業時間
+        String[] arrName = new String[200];//  店家名稱
+        String[] arrGreat = new String[200];//  評價
+        String[] arrData = new String[200];// 店家資訊
+        String[] arrRush = new String[200];// 尖峰時間
+        String[] arrTime = new String[200];// 營業時間
+        String[] arrClass = new String[200];//類別
         String[] arrClass1 = new String[200];// 類別1
         String[] arrClass2 = new String[200];// 類別2
         String[] arrClass3 = new String[200];// 類別3
@@ -258,7 +259,7 @@ public class Main {
                 case 4:
                     while (true){
                         D0588491 randomSelect = new D0588491();
-                        String rand = randomSelect.randomShop(count);
+                        randomSelect.randomShop(count,arrName);
                         //System.out.println(randomSelect.getShopName(arrName,rand));
                         exit = exit();
                         if(exit){

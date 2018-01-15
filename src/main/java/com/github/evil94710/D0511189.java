@@ -11,7 +11,7 @@ public class D0511189 {
         condition = keyboard.nextInt();
     }
     public void determine(String[] arrName,String[] arrClass){
-        int i=0,j=0,p,k,count;
+        int i=0,j,p,k,count;
         String[]  arr=new String[200];
         if(condition<1||condition>4){
             System.out.print("輸入錯誤"+"\n");

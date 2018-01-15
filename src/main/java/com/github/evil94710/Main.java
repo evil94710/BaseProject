@@ -10,7 +10,7 @@ import java.util.Random;
 public class Main {
     public static void main(String args[]) throws
 IOException{
-        int count = 0;
+        int count = 20;
         FileReader file = new FileReader("list.txt");
         BufferedReader br = new BufferedReader(file);
         Scanner keyboard = new Scanner(System.in);

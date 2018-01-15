@@ -49,7 +49,8 @@ public class Main {
         String[] arrTime = new String[200];   // 營業時間
         String[] arrClass = new String[200];  // 類別
         boolean exit;
-        while(true){
+        boolean exitMain = true;
+        while(exitMain){
             Scanner keyboard = new Scanner(System.in);
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開\n");
             int choose = keyboard.nextInt();
@@ -215,6 +216,11 @@ public class Main {
                     }
                     break;
                 case 6:
+                    exit = exitMain();
+                    if(exit){
+                        exitMain = false;
+                        break;
+                    }
                     break;
             }
         }
@@ -232,4 +238,13 @@ public static boolean exit(){
     return false;
 }
 
-public static
+public static boolean exitMain(){
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("是否離開此程式? Y/N");
+    String exit = keyboard.nextLine();
+    keyboard.close();
+    if (exit.equalsIgnoreCase("Y")) {
+        return true;
+    }
+    return false;
+}

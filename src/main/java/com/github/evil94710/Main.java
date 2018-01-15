@@ -246,7 +246,6 @@ public class Main {
                                 System.out.println("尖峰時間:" + arrRush[counting]);
                                 System.out.println("營業時間:" + arrTime[counting]);
 
-
                                 exit = exit();
                                 if(exit){
                                     break;
@@ -287,26 +286,25 @@ public class Main {
             }
         }
     }
-    public static boolean exit(){
+    private static boolean exit(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此功能? Y/N");
         String exit = keyboard.nextLine();
         keyboard.close();
-        if (exit.equalsIgnoreCase("Y")) {
+        if (exit.equalsIgnoreCase("Y"))
             return true;
-        }
         return false;
     }
 
-    public static boolean exitMain(){
+    private static boolean exitMain(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此程式? Y/N");
         String exit = keyboard.nextLine();
         keyboard.close();
-        if (exit.equalsIgnoreCase("Y")) {
+        if (exit.equalsIgnoreCase("Y"))
             return true;
-        }
-        return false;
+        else
+            return false;
     }
 }
 

@@ -1,5 +1,4 @@
 package com.github.evil94710;
-import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -27,9 +26,6 @@ IOException{
             }
         }
 
-        for(int i = 0;i<tempArray.length;i++) {
-            System.out.println(tempArray[i]);
-        }
         int k = myList.size()/9,num = 0;
         String[][] list = new String[k][9];
         for(int i = 0;i < k;i++) {

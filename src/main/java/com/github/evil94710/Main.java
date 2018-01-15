@@ -49,7 +49,7 @@ public class Main {
         String[] arrData = new String[200];   // 店家資訊
         String[] arrRush = new String[200];   // 尖峰時間
         String[] arrTime = new String[200];   // 營業時間
-        String[] arrClass = new String[200];
+        String[] arrClass = new String[200];//類別
         String[] arrClass1 = new String[200];// 類別1
         String[] arrClass2 = new String[200];// 類別2
         String[] arrClass3 = new String[200];// 類別3

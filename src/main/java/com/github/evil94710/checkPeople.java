@@ -20,8 +20,8 @@ public class checkPeople {
     public String getRushTime() {
         return rushTime;
     }
-    public int checkShopName(String shopName,String[] arrName,String[] arrRush){
-        for (int i = 0 ; i < 200 ; i++) {
+    public int checkShopName(String shopName,String[] arrName,String[] arrRush,int count){
+        for (int i = 0 ; i < count ; i++) {
             if (arrName[i].equals(shopName)) {
                 setRushTime(arrRush[i]);
                 return i;

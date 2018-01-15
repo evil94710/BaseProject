@@ -113,8 +113,8 @@ public class Main {
 		}*/
         boolean exit;
         boolean exitMain = true;
+        Scanner keyboard = new Scanner(System.in);
         while(exitMain){
-            Scanner keyboard = new Scanner(System.in);
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開\n");
             int choose = keyboard.nextInt();
             switch(choose) {
@@ -124,8 +124,7 @@ public class Main {
                         System.out.println("enter the shop name:");
                         String name = keyboard.next();
                         people.setShopName(name);
-                        System.out.println(people.getShopName());
-                        int number = people.checkShopName(name,arrName,arrRush);
+                        int number = people.checkShopName(name,arrName,arrRush,count);
                         if (number == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
                         } else {

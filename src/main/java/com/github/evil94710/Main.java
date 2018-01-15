@@ -12,6 +12,7 @@ public class Main {
     public static void main(String args[]) throws
         Exception,IOException{
         int count = 20;
+        //ReadFile.class.getResourceAsStream("list.txt");
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         String line,tempString;
@@ -47,7 +48,67 @@ public class Main {
         String[] arrData = new String[200];   // 店家資訊
         String[] arrRush = new String[200];   // 尖峰時間
         String[] arrTime = new String[200];   // 營業時間
-        String[] arrClass = new String[200];  // 類別
+        String[] arrClass1 = new String[200];// 類別1
+        String[] arrClass2 = new String[200];// 類別2
+        String[] arrClass3 = new String[200];// 類別3
+        String[] arrClass4 = new String[200];// 類別4
+        for(int i = 0;i < k;i++) {//arrName陣列
+            arrName[i] = list[i][0];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrName[i]);
+		}*/
+
+        for(int i = 0;i < k;i++) {//arrGreat陣列
+            arrGreat[i] = list[i][1];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrGreat[i]);
+		}*/
+
+        for(int i = 0;i < k;i++) {//arrData陣列
+            arrData[i] = list[i][2];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrData[i]);
+		}*/
+
+        for(int i = 0;i < k;i++){//arrRush陣列
+            arrRush[i] = list[i][3];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrRush[i]);
+		}*/
+
+        for(int i = 0;i < k;i++) {//arrTime陣列
+            arrTime[i] = list[i][4];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrTime[i]);
+		}*/
+
+        for(int i = 0;i < k;i++) {//arrClass1類別
+            arrClass1[i] = list[i][5];
+        }
+
+        for(int i = 0;i < k;i++) {//arrClass2類別
+            arrClass2[i] = list[i][6];
+        }
+
+        for(int i = 0;i < k;i++) {//arrClass3類別
+            arrClass3[i] = list[i][7];
+        }
+
+        for(int i = 0;i < k;i++) {//arrClass4類別
+            arrClass4[i] = list[i][8];
+        }
+
+        for(int i = 0;i < k;i++) {//arrClass類別
+            arrClass[i] = arrClass1[i]+arrClass2[i]+arrClass3[i]+arrClass4[i];
+        }
+		/*for(int i = 00;i < k;i++) {
+			System.out.println(arrClass[i]);
+		}*/
         boolean exit;
         boolean exitMain = true;
         while(exitMain){
@@ -197,8 +258,8 @@ public class Main {
                 case 4:
                     while (true){
                         D0588491 randomSelect = new D0588491();
-                        int ranNum = randomSelect.randomShop(count);
-                        System.out.println(randomSelect.getShopName(arrName,ranNum));
+                        String rand = randomSelect.randomShop(count);
+                        //System.out.println(randomSelect.getShopName(arrName,rand));
                         exit = exit();
                         if(exit){
                             break;

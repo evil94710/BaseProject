@@ -16,7 +16,7 @@ public class D0588491{
 
     public void getShopName(String[] arrName,int num){
         this.shopName = arrName[num];
-        System.out.println(shopName);
+        System.out.println("隨機選擇到: "+shopName);
         //return shopName;
     }
 }

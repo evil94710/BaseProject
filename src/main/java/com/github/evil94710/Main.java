@@ -8,8 +8,7 @@ import java.lang.*;
 
 
 public class Main {
-    public static void main(String args[]) throws
-        IOException{
+    public static void main(String args[]) throws IOException{
         int count = 20;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
@@ -48,6 +47,7 @@ public class Main {
         String[] arrClass2 = new String[200];// 類別2
         String[] arrClass3 = new String[200];// 類別3
         String[] arrClass4 = new String[200];// 類別4
+
         for(int i = 0;i < k;i++) {//arrName陣列
             arrName[i] = list[i][0];
         }
@@ -62,18 +62,18 @@ public class Main {
 			System.out.println(arrGreat[i]);
 		}*/
 
-        for(int i = 0;i < k;i++) {//arrData陣列
-            arrData[i] = list[i][2];
-        }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrData[i]);
-		}*/
-
         for(int i = 0;i < k;i++){//arrRush陣列
-            arrRush[i] = list[i][3];
+            arrRush[i] = list[i][2];
         }
 		/*for(int i = 0;i < k;i++) {
 			System.out.println(arrRush[i]);
+		}*/
+
+        for(int i = 0;i < k;i++) {//arrData陣列
+            arrData[i] = list[i][3];
+        }
+		/*for(int i = 0;i < k;i++) {
+			System.out.println(arrData[i]);
 		}*/
 
         for(int i = 0;i < k;i++) {//arrTime陣列
@@ -102,7 +102,7 @@ public class Main {
         for(int i = 0;i < k;i++) {//arrClass類別
             arrClass[i] = arrClass1[i]+arrClass2[i]+arrClass3[i]+arrClass4[i];
         }
-		/*for(int i = 00;i < k;i++) {
+		/*for(int i = 0 ;i < k;i++) {
 			System.out.println(arrClass[i]);
 		}*/
         boolean exit;
@@ -114,6 +114,7 @@ public class Main {
             if(keyboard.hasNextInt())
                 choose = keyboard.nextInt();
             switch(choose) {
+
                 case 1:
                     checkPeople people = new checkPeople();
                     while (true) {
@@ -135,6 +136,7 @@ public class Main {
                         }
                     }
                     break;
+
                 case 2:
                     D0511189 search=new D0511189();
                     while(true){
@@ -146,6 +148,7 @@ public class Main {
                         }
                     }
                     break;
+
                 case 3:
                     insertData insert = new insertData();
                     String ans;
@@ -253,6 +256,7 @@ public class Main {
                         }
                     }
                     break;
+
                 case 4:
                     while (true){
                         D0588491 randomSelect = new D0588491();
@@ -263,6 +267,7 @@ public class Main {
                         }
                     }
                     break;
+
                 case 5:
                     while (true){
                         googleMap openMap = new googleMap();
@@ -278,6 +283,7 @@ public class Main {
                         }
                     }
                     break;
+
                 case 6:
                     exit = exitMain();
                     if(exit){
@@ -289,6 +295,7 @@ public class Main {
         }
         keyboard.close();
     }
+
     private static boolean exit(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此功能? Y/N");
@@ -308,5 +315,3 @@ public class Main {
             return false;
     }
 }
-
-

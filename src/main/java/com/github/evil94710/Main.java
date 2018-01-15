@@ -2,8 +2,7 @@ package com.github.evil94710;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.lang.*;
 
@@ -12,8 +11,7 @@ public class Main {
     public static void main(String args[]) throws
         Exception,IOException{
         int count = 20;
-        //ReadFile.class.getResourceAsStream("list.txt");
-        InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
+        FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         System.out.println("所在目錄: " + file.getEncoding());
         String line,tempString;
@@ -26,10 +24,6 @@ public class Main {
                 myList.add(tempArray[i]);
             }
         }
-
-        for(int i = 0;i<tempArray.length;i++) {
-            System.out.println(tempArray[i]);
-        }
         int k = myList.size()/9,num = 0;
         String[][] list = new String[k][9];
         for(int i = 0;i < k;i++) {
@@ -38,11 +32,11 @@ public class Main {
                 num++;
             }
         }
-        for(int i = 0;i < k;i++) {
+        /*for(int i = 0;i < k;i++) {
             for(int j = 0;j < 9;j++) {
                 System.out.println(list[i][j]);
             }
-        }
+        }*/
         file.close();
         String[] arrName = new String[200];   //  店家名稱
         String[] arrGreat = new String[200];  //  評價

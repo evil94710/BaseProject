@@ -76,23 +76,23 @@ public class insertData{
         time = scn.nextLine();
     }
 
-    public String setName(String ...arrName){
+    public void setName(String ...arrName){
         arrName[count] = name;
     }
 
-    public String setGreat(String ...arrGreat) {
+    public void setGreat(String ...arrGreat) {
         arrGreat[count] = great;
     }
 
-    public String setData(String ...arrData){
+    public void setData(String ...arrData){
         arrData[count] =  data;
     }
 
-    public String setRushtime(String ...arrRush){
+    public void setRushtime(String ...arrRush){
         arrRush[count] = rushtime;
     }
 
-    public String setTime(String ...arrTime){
+    public void setTime(String ...arrTime){
         arrTime[count] = time;
     }
 

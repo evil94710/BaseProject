@@ -77,7 +77,7 @@ IOException{
                         }
 
                         boolean check = insert.checkList(arrName);
-                        if (check == true) {
+                        if (check) {
 
                             int counting = insert.setCounting();
                             System.out.println(name+" (原資料)");

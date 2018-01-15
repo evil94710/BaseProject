@@ -58,9 +58,6 @@ public class D0511189 {
                 Random ran = new Random();
                 int num = ran.nextInt(i);
                 System.out.println(arr[num]);
-                /*k++;
-                if (k == 5)
-                    break;*/
             }
         }
     }

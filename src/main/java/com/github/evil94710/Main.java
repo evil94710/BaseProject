@@ -30,8 +30,9 @@ IOException{
                 case 1:
                     checkPeople people = new checkPeople();
                     while (true) {
+                        Scanner scn = new Scanner(System.in);
                         System.out.println("enter the shop name:");
-                        String name = keyboard.nextLine();
+                        String name = scn.nextLine();
                         people.setShopName(name);
                         System.out.println(people.getShopName());
                         int num = people.checkShopName(name,arrName,arrRush);
@@ -42,7 +43,7 @@ IOException{
                             System.out.println("尖峰人潮時間:" + people.getRushTime());
                         }
                         System.out.println("是否離開此功能? Y/N");
-                        String exit = keyboard.nextLine();
+                        String exit = scn.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
                             break;
                         }
@@ -50,6 +51,7 @@ IOException{
                     break;
                 case 2:
                     D0511189 search=new D0511189();
+                    Scanner keyboard = new Scanner(System.in);
                     while(true){
                         search.setfunction();
                         search.determine(search.getfunction());
@@ -77,7 +79,7 @@ IOException{
                         }
 
                         boolean check = insert.checkList(arrName);
-                        if (check) {
+                        if (check == true) {
 
                             int counting = insert.setCounting();
                             System.out.println(name+" (原資料)");
@@ -89,7 +91,7 @@ IOException{
                             while (true){
                                 insert.getGreat();
                                 insert.getData();
-                                insert.getRush();
+                                insert.getRushtime();
                                 insert.getTime();
 
                                 System.out.println("是否新增資料: Y / N");
@@ -122,7 +124,7 @@ IOException{
                                     insert.motd();
                                     insert.getGreat();
                                     insert.getData();
-                                    insert.getRush();
+                                    insert.getRushtime();
                                     insert.getTime();
 
                                     System.out.println("是否新增資料: Y / N");

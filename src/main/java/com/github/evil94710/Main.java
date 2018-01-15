@@ -9,7 +9,7 @@ import java.lang.*;
 
 public class Main {
     public static void main(String args[]) throws
-        Exception,IOException{
+        IOException{
         int count = 20;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
@@ -110,13 +110,17 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         while(exitMain){
             System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開\n");
-            int choose = keyboard.nextInt();
+            int choose = 0;
+            if(keyboard.hasNextInt())
+                choose = keyboard.nextInt();
             switch(choose) {
                 case 1:
                     checkPeople people = new checkPeople();
                     while (true) {
+                        String name = "";
                         System.out.println("enter the shop name:");
-                        String name = keyboard.next();
+                        if(keyboard.hasNext())
+                            name = keyboard.next();
                         people.setShopName(name);
                         int number = people.checkShopName(name,arrName,arrRush,count);
                         if (number == -1) {
@@ -262,7 +266,12 @@ public class Main {
                 case 5:
                     while (true){
                         googleMap openMap = new googleMap();
-                        openMap.openGoogleMap();
+                        try{
+                            openMap.openGoogleMap();
+                        }catch (Exception e){
+                            System.out.println("googleMap function is error.");
+                        }
+
                         exit = exit();
                         if(exit){
                             break;
@@ -278,12 +287,12 @@ public class Main {
                     break;
             }
         }
+        keyboard.close();
     }
     private static boolean exit(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此功能? Y/N");
-        String exit = keyboard.nextLine();
-        keyboard.close();
+        String exit = keyboard.next();
         if (exit.equalsIgnoreCase("Y"))
             return true;
         return false;
@@ -292,8 +301,7 @@ public class Main {
     private static boolean exitMain(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此程式? Y/N");
-        String exit = keyboard.nextLine();
-        keyboard.close();
+        String exit = keyboard.next();
         if (exit.equalsIgnoreCase("Y"))
             return true;
         else

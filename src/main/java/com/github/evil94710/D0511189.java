@@ -9,11 +9,12 @@ public class D0511189 {
         System.out.println("input your condition number(only one and number only):"+"\n");
         condition = keyboard.nextInt();
     }
+
     public void determine(String[] arrName,String[] arrClass,int count){
-        int i=0,j=0,p,k=0;
-        String[]  arr=new String[200];
+        int i = 0, k = 0, j, p;
+        String[]  arr = new String[200];
         String Condition= String.valueOf(condition);
-        if(condition<1||condition>4){
+        if(condition < 1 || condition > 4){
             System.out.print("輸入錯誤"+"\n");
         }
         else if(Condition.equals("")){
@@ -31,7 +32,7 @@ public class D0511189 {
                     break;
                 case 2:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charAt(1)=='1') {
+                        if (arrClass[p].charAt(1) == '1') {
                             arr[i] = arrName[p];
                             i++;
                         }
@@ -39,7 +40,7 @@ public class D0511189 {
                     break;
                 case 3:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charAt(2)=='1') {
+                        if (arrClass[p].charAt(2) == '1') {
                             arr[i] = arrName[p];
                             i++;
                         }
@@ -47,17 +48,17 @@ public class D0511189 {
                     break;
                 case 4:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charAt(3)=='1') {
+                        if (arrClass[p].charAt(3) == '1') {
                             arr[i] = arrName[p];
                             i++;
                         }
                     }
                     break;
             }
-            for(j=0;j<arr.length;j++){
+            for(j = 0;j < arr.length;j ++){
                 System.out.println(arr[j]);
                 k++;
-                if(k==5)
+                if( k == 5 )
                     break;
             }
         }

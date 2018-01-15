@@ -2,19 +2,19 @@ package com.github.evil94710;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Random;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.lang.*;
 
-
 public class Main {
     public static void main(String args[]) throws
-        Exception,IOException{
-        int count = 20;
+IOException{
+        int count = 0;
         InputStreamReader file = new InputStreamReader(new FileInputStream("list.txt"),"UTF-8");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
-        String line,tempString;
+        String line,tempString = null;
         String[] tempArray = new String[200];
         ArrayList<String> myList = new ArrayList<String>();
         while((line=br.readLine())!=null) {
@@ -48,11 +48,10 @@ public class Main {
         String[] arrRush = new String[200];   // 尖峰時間
         String[] arrTime = new String[200];   // 營業時間
         String[] arrClass = new String[200];  // 類別
-        boolean exit;
-        boolean exitMain = true;
-        while(exitMain){
+
+        while(true){
             Scanner keyboard = new Scanner(System.in);
-            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開\n");
+            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.離開\n");
             int choose = keyboard.nextInt();
             switch(choose) {
                 case 1:
@@ -69,8 +68,9 @@ public class Main {
                             System.out.println("店家名稱:" + people.getShopName());
                             System.out.println("尖峰人潮時間:" + people.getRushTime());
                         }
-                        exit = exit();
-                        if(exit){
+                        System.out.println("是否離開此功能? Y/N");
+                        String exit = keyboard.nextLine();
+                        if (exit.equalsIgnoreCase("Y")) {
                             break;
                         }
                     }
@@ -80,8 +80,9 @@ public class Main {
                     while(true){
                         search.setFunction();
                         search.determine(arrName,arrClass,count);
-                        exit = exit();
-                        if(exit){
+                        System.out.println("是否離開此功能? Y/N");
+                        String exit = keyboard.nextLine();
+                        if (exit.equalsIgnoreCase("Y")) {
                             break;
                         }
                     }
@@ -184,10 +185,10 @@ public class Main {
                                 System.out.println("營業時間:" + arrTime[counting]);
 
 
-                                exit = exit();
-                                if(exit){
+                                System.out.print("新增資料成功, 使否離開此功能? Y/N");
+                                ans = keyboard.nextLine();
+                                if (ans.equalsIgnoreCase("Y"))
                                     break;
-                                }
                             }else {
                                 System.out.println("重新輸入店家名稱");
                             }
@@ -195,56 +196,19 @@ public class Main {
                     }
                     break;
                 case 4:
-                    while (true){
-                        D0588491 randomSelect = new D0588491();
-                        int ranNum = randomSelect.randomShop(count);
-                        System.out.println(randomSelect.getShopName(arrName,ranNum));
-                        exit = exit();
-                        if(exit){
+                    D0588491 rand = new D0588491();
+                    rand.randomShop(count);
+                    while(true) {
+                        System.out.println("是否離開此功能? Y/N");
+                        String select = keyboard.next();
+                        if (select.equalsIgnoreCase("Y"))
                             break;
-                        }
                     }
                     break;
+
                 case 5:
-                    while (true){
-                        googleMap openMap = new googleMap();
-                        openMap.openGoogleMap();
-                        exit = exit();
-                        if(exit){
-                            break;
-                        }
-                    }
-                    break;
-                case 6:
-                    exit = exitMain();
-                    if(exit){
-                        exitMain = false;
-                        break;
-                    }
                     break;
             }
         }
     }
-}
-
-public static boolean exit(){
-    Scanner keyboard = new Scanner(System.in);
-    System.out.println("是否離開此功能? Y/N");
-    String exit = keyboard.nextLine();
-    keyboard.close();
-    if (exit.equalsIgnoreCase("Y")) {
-        return true;
-    }
-    return false;
-}
-
-public static boolean exitMain(){
-    Scanner keyboard = new Scanner(System.in);
-    System.out.println("是否離開此程式? Y/N");
-    String exit = keyboard.nextLine();
-    keyboard.close();
-    if (exit.equalsIgnoreCase("Y")) {
-        return true;
-    }
-    return false;
 }

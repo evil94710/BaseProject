@@ -52,8 +52,8 @@ IOException{
                 case 2:
                     D0511189 search=new D0511189();
                     while(true){
-                        search.setfunction();
-                        search.determine(search.getfunction());
+                        search.setFunction();
+                        search.determine(search.getFunction());
                         System.out.println("是否離開此功能? Y/N");
                         String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {

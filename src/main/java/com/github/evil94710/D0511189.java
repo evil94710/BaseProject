@@ -2,18 +2,18 @@ package com.github.evil94710;
 
 import java.util.Scanner;
 public class D0511189 {
-    private String condition;
+    private int condition;
     Scanner keyboard = new Scanner(System.in);
 
     public void setfunction(){
         System.out.println("1.午餐"+"\n"+"2.晚餐"+"\n"+"3.宵夜"+"\n"+"4.點心"+"\n");
-        System.out.println("input your condition number(only one):"+"\n");
+        System.out.println("input your condition number(only one and only number):"+"\n");
         condition = keyboard.nextInt();
     }
-    public String getfunction(){
+    public int getfunction(){
         return condition;
     }
-    public void determine(String condition){
+    public void determine(int condition){
         int i=0,j=0,s, p,k, count,Array[20];
         if(condition<1||condition>4){
             System.out.print("輸入錯誤"+"\n");

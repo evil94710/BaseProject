@@ -10,10 +10,7 @@ public class D0511189 {
         System.out.println("input your condition number(only one and number only):"+"\n");
         condition = keyboard.nextInt();
     }
-    public int getFunction(){
-        return condition;
-    }
-    public void determine(int condition){
+    public void determine(String[] arrName,String[] arrClass){
         int i=0,j=0,p,k,count;
         String[]  arr=new String[200];
         if(condition<1||condition>4){
@@ -26,7 +23,7 @@ public class D0511189 {
             switch (condition) {
                 case 1:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charat[0].equals("1")) {
+                        if (arrClass[p].charAt(0)=="1") {
                             arr[i] = arrName[p];
                             i++;
                         }
@@ -34,7 +31,7 @@ public class D0511189 {
                     break;
                 case 2:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charat[1].equals("1")) {
+                        if (arrClass[p].charAt(1)=="1") {
                             arr[i] = arrName[p];
                             i++;
                         }
@@ -42,7 +39,7 @@ public class D0511189 {
                     break;
                 case 3:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charat[2].equals("1")) {
+                        if (arrClass[p].charAt(2)=="1") {
                             arr[i] = arrName[p];
                             i++;
                         }
@@ -50,7 +47,7 @@ public class D0511189 {
                     break;
                 case 4:
                     for (p = 0; p < count; p++) {
-                        if (arrClass[p].charat[3].equals("1")) {
+                        if (arrClass[p].charAt(3)=="1") {
                             arr[i] = arrName[p];
                             i++;
                         }

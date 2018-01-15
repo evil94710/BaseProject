@@ -53,7 +53,7 @@ IOException{
                     D0511189 search=new D0511189();
                     while(true){
                         search.setFunction();
-                        search.determine(arrName,arrClass);
+                        search.determine(arrName,arrClass,count);
                         System.out.println("是否離開此功能? Y/N");
                         String exit = keyboard.nextLine();
                         if (exit.equalsIgnoreCase("Y")) {
@@ -162,6 +162,5 @@ IOException{
                     break;
             }
         }
-        file.close();
     }
 }

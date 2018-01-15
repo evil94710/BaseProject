@@ -225,6 +225,7 @@ public class Main {
             }
         }
     }
+
     public static boolean exit(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此功能? Y/N");

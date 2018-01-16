@@ -55,22 +55,29 @@ public class D0511189 {
                     }
                     break;
             }
-            for (j = 0; j < 5; j++) {
-                Random ran = new Random();
-                int num = ran.nextInt(i);
-                rand[j] = num;
-                for (s = 0; s < j; s++) {
-                    if (rand[j] == rand[s]) {
-                        j--;
-                        break;
-                    }
+            if( i <= 5){
+                for( j = 0; j < i ; j ++){
+                    System.out.println(arr[j]);
                 }
             }
-            for ( j = 0;j < 5;j++){
-                if(arr[rand[j]]==null){
-                    break;
+            else{
+                for (j = 0; j < 5; j++) {
+                    Random ran = new Random();
+                    int num = ran.nextInt(i);
+                    rand[j] = num;
+                    for (s = 0; s < j; s++) {
+                        if (rand[j] == rand[s]) {
+                            j--;
+                            break;
+                        }
+                    }
                 }
-                System.out.println(arr[rand[j]]);
+                for ( j = 0;j < 5;j++){
+                    if(arr[rand[j]]==null){
+                        break;
+                    }
+                    System.out.println(arr[rand[j]]);
+                }
             }
         }
     }

@@ -12,8 +12,9 @@ public class D0511189 {
     }
 
     public void determine(String[] arrName, String[] arrClass, int count) {
-        int i = 0, k = 0, j, p;
+        int i = 0, k = 0, s , j, p;
         String[] arr = new String[200];
+        int[] rand = new int[5];
         String Condition = String.valueOf(condition);
         if (condition < 1 || condition > 4) {
             System.out.print("輸入錯誤" + "\n");
@@ -57,7 +58,19 @@ public class D0511189 {
             for (j = 0; j < 5; j++) {
                 Random ran = new Random();
                 int num = ran.nextInt(i);
-                System.out.println(arr[num]);
+                rand[j] = num;
+                for (s = 0; s < j; s++) {
+                    if (rand[j] == rand[s]) {
+                        j--;
+                        break;
+                    }
+                }
+            }
+            for ( j = 0;j < 5;j++){
+                if(arr[rand[j]]==null){
+                    break;
+                }
+                System.out.println(arr[rand[j]]);
             }
         }
     }

@@ -12,7 +12,7 @@ public class Main {
         int count = 20;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
-        System.out.println("所在目錄: " + file.getEncoding());
+        //System.out.println("所在目錄: " + file.getEncoding());
         String line,tempString;
         String[] tempArray = new String[200];
         ArrayList<String> myList = new ArrayList<String>();

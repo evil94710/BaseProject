@@ -12,7 +12,6 @@ public class Main {
         int count = 20;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
-        //System.out.println("所在目錄: " + file.getEncoding());
         String line,tempString;
         String[] tempArray = new String[200];
         ArrayList<String> myList = new ArrayList<String>();
@@ -37,12 +36,12 @@ public class Main {
             }
         }*/
         file.close();
-        String[] arrName = new String[200];   //  店家名稱
-        String[] arrGreat = new String[200];  //  評價
-        String[] arrData = new String[200];   // 店家資訊
-        String[] arrRush = new String[200];   // 尖峰時間
-        String[] arrTime = new String[200];   // 營業時間
-        String[] arrClass = new String[200];
+        String[] arrName = new String[200];//  店家名稱
+        String[] arrGreat = new String[200];//  評價
+        String[] arrData = new String[200];// 店家資訊
+        String[] arrRush = new String[200];// 尖峰時間
+        String[] arrTime = new String[200];// 營業時間
+        String[] arrClass = new String[200];//類別
         String[] arrClass1 = new String[200];// 類別1
         String[] arrClass2 = new String[200];// 類別2
         String[] arrClass3 = new String[200];// 類別3

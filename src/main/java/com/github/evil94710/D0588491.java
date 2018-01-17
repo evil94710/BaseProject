@@ -3,10 +3,6 @@ import java.util.Random;
 
 public class D0588491{
     private String shopName;
-    //private String shopGreat;
-    //private String shopData;
-    //private String shopRush;
-    //private String shopTime;
 
     public void randomShop(int count,String[] arrName) {
         Random ran = new Random();
@@ -17,6 +13,5 @@ public class D0588491{
     public void getShopName(String[] arrName,int num){
         this.shopName = arrName[num];
         System.out.println("隨機選擇到: "+shopName);
-        //return shopName;
     }
 }

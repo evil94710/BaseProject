@@ -108,7 +108,7 @@ public class Main {
         boolean exitMain = true;
         Scanner keyboard = new Scanner(System.in);
         while(exitMain){
-            System.out.println("1.查看店家人潮2.找出符合條件店家3.新增資訊4.隨機選擇5.GoogleMap導航6.離開");
+            System.out.println("1.查看店家人潮2.找出符合條件店家3.新增資訊4.隨機選擇店家5.GoogleMap導航6.離開");
             int choose = 0;
             if(keyboard.hasNextInt())
                 choose = keyboard.nextInt();
@@ -125,6 +125,7 @@ public class Main {
                         int number = people.checkShopName(name,arrName,arrRush,count);
                         if (number == -1) {
                             System.out.println("此名稱不完整或不收錄於名單內，請重新輸入!");
+                            continue;
                         } else {
                             System.out.println("店家名稱:" + people.getShopName());
                             System.out.println("尖峰人潮時間:" + people.getRushTime());

@@ -108,7 +108,7 @@ public class Main {
         boolean exitMain = true;
         Scanner keyboard = new Scanner(System.in);
         while(exitMain){
-            System.out.println("1.選擇輸入店家2.選擇輸入想要條件3.新增資訊4.隨機選擇5.GoogleMap導航6.離開");
+            System.out.println("1.查看店家人潮2.找出符合條件店家3.新增資訊4.隨機選擇5.GoogleMap導航6.離開");
             int choose = 0;
             if(keyboard.hasNextInt())
                 choose = keyboard.nextInt();

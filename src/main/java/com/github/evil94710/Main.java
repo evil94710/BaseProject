@@ -158,7 +158,7 @@ public class Main {
 
                         while (true) {
                             System.out.print("請輸入店家名稱:");
-                            name = keyboard.nextLine();
+                            name = keyboard.next();
 
                             if (name.equals(""))
                                 System.out.println("輸入錯誤");
@@ -183,7 +183,7 @@ public class Main {
                                 insert.getTime();
 
                                 System.out.println("是否新增資料: Y / N");
-                                ans = keyboard.nextLine();
+                                ans = keyboard.next();
                                 if (ans.equalsIgnoreCase("Y"))
                                     break;
                             }
@@ -203,7 +203,7 @@ public class Main {
                             System.out.println("營業時間:"+arrTime[counting]);
 
                             System.out.print("新增資料成功, 是否離開此功能? Y/N");
-                            ans = keyboard.nextLine();
+                            ans = keyboard.next();
                             if (ans.equalsIgnoreCase("Y"))
                                 break;
 

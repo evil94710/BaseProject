@@ -6,8 +6,8 @@ public class D0511189 {
     Scanner keyboard = new Scanner(System.in);
 
     public void setFunction() {
-        System.out.println("1.午餐" + "\n" + "2.晚餐" + "\n" + "3.宵夜" + "\n" + "4.點心" + "\n");
-        System.out.println("input your condition number(only one and number only):" + "\n");
+        System.out.println("1.午餐" + "\n" + "2.晚餐" + "\n" + "3.宵夜" + "\n" + "4.點心" );
+        System.out.println("input your condition number(only one and number only):");
         condition = keyboard.nextInt();
     }
 

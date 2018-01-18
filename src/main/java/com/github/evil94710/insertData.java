@@ -9,26 +9,22 @@ public class insertData{
     private String rushTime;
     private String time;
     private int count;
-    private int counting = 0;
+    private int counting;
     Scanner scn = new Scanner(System.in);
 
-    public void getShopName(String name){
+    public void getShopName(String name){    /*傳入要新增或修改的店家名稱*/
         this.name = name;
     }
 
-    public int setCounting(){
+    public int setCounting(){         /*初始化計數*/
         counting = 0;
         return counting;
 
     }
 
-    public int setCounting(int num){
-        counting = count + num;
-        return counting;
 
-    }
 
-    public boolean checkList(String... arrName){
+    public boolean checkList(String[] arrName){
 
         counting = setCounting();
 
@@ -43,7 +39,8 @@ public class insertData{
 
     }
 
-    public int counting(){                         /*  已有  */
+    public int returnCounting(){                         /*  已有  */
+                           /*回傳店家的在店家中的位置*/
         return counting;
     }
     public void getCounting(){                     /*  已有  */
@@ -56,10 +53,15 @@ public class insertData{
 
 
 
-    public void getCount(int count){              /*  新增  */
-        this.count = count+1 ;
+    public void getCount(int counting){              /*  新增店家 總店家數+1*/
+        this.count = counting ;
     }
-
+    public void getCount(){              /*  新增店家 總店家數+1*/
+        this.count = count + 1  ;
+    }
+    public int returnCount(){                     /* 回傳店家數*/
+        return count;
+    }
 
     public void getGreat(){
         System.out.print("請輸入該店家評價: ");
@@ -81,24 +83,29 @@ public class insertData{
         time = scn.nextLine();
     }
 
-    public void setName(String ...arrName){
+    public String[] setName(String ...arrName){
         arrName[count] = name;
+        return arrName;
     }
 
-    public void setGreat(String ...arrGreat) {
+    public String[] setGreat(String ...arrGreat) {
         arrGreat[count] = great;
+        return arrGreat;
     }
 
-    public void setData(String ...arrData){
+    public String[] setData(String ...arrData){
         arrData[count] =  data;
+        return arrData;
     }
 
-    public void setRush(String ...arrRush){
+    public String[] setRush(String ...arrRush){
         arrRush[count] = rushTime;
+        return arrRush;
     }
 
-    public void setTime(String ...arrTime){
+    public String[] setTime(String ...arrTime){
         arrTime[count] = time;
+        return arrTime;
     }
 
 

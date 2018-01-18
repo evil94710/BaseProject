@@ -26,7 +26,7 @@ public class insertData{
 
     public boolean checkList(String[] arrName){
 
-        counting = setCounting();
+        counting = 0;
 
         for(String search : arrName){
 

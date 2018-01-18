@@ -170,7 +170,7 @@ public class Main {
                         boolean check = insert.checkList(arrName);
                         if (check) {
 
-                            counting = insert.setCounting();
+                            counting = insert.returnCounting();
                             System.out.println(name+" (原資料)");
                             System.out.println("評價:"+arrGreat[counting]);
                             System.out.println("資訊:"+arrData[counting]);
@@ -189,7 +189,7 @@ public class Main {
                                     break;
                             }
 
-                            counting = insert.returnCounting();
+
                             insert.getCount(counting);
                             arrName = insert.setName(arrName);
                             arrGreat = insert.setGreat(arrGreat);

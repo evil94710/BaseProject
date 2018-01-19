@@ -9,7 +9,7 @@ import java.lang.*;
 
 public class Main {
     public static void main(String args[]) throws IOException{
-         int count = 19;
+        int count = 19;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         String line,tempString;
@@ -83,6 +83,7 @@ public class Main {
             arrClass[i] = arrClass1[i]+arrClass2[i]+arrClass3[i]+arrClass4[i];
         }
 
+        arrName[0] = arrName[0].substring(2,arrName[0].length());
         boolean exit;
         boolean exitMain = true;
         Scanner keyboard = new Scanner(System.in);
@@ -244,7 +245,6 @@ public class Main {
 
                                 insert.setCount(count,1);
                                 count = insert.returnCount();
-
                                 arrName = insert.setName(arrName);
                                 arrGreat = insert.setGreat(arrGreat);
                                 arrData = insert.setData(arrData);

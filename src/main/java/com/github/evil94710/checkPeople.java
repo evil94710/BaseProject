@@ -21,7 +21,7 @@ public class checkPeople {
         return rushTime;
     }
     public int checkShopName(String shopName,String[] arrName,String[] arrRush,int count){
-        for (int i = 0 ; i < count ; i++) {
+        for (int i = 0 ; i <= count ; i++) {
             if (arrName[i].equals(shopName)) {
                 setRushTime(arrRush[i]);
                 return i;

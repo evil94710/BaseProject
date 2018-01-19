@@ -51,11 +51,11 @@ public class insertData{
             System.out.println("開始新增 " + name + " 資訊(輸入不可為空)");
         }
 
-    public void getCount(int counting){              /*  新增店家 總店家數+1*/
+    public void setCount(int counting){              /*  新增店家 總店家數+1*/
         this.count = counting ;
     }
-    public void getCount(){              /*  新增店家 總店家數+1*/
-        this.count = count + 1  ;
+    public void setCount(int count,int num){              /*  新增店家 總店家數+1*/
+        this.count = count + num  ;
     }
     public int returnCount(){                     /* 回傳店家數*/
         return count;

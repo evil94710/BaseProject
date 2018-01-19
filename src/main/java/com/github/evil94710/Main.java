@@ -9,7 +9,7 @@ import java.lang.*;
 
 public class Main {
     public static void main(String args[]) throws IOException{
-         int count = 20;
+         int count = 19;
         FileReader file = new FileReader ("list.txt");
         BufferedReader br = new BufferedReader(file);//取得完整的字串
         String line,tempString;
@@ -186,7 +186,7 @@ public class Main {
                             }
 
 
-                            insert.getCount(counting);
+                            insert.setCount(counting);
                             arrName = insert.setName(arrName);
                             arrGreat = insert.setGreat(arrGreat);
                             arrData = insert.setData(arrData);
@@ -210,7 +210,7 @@ public class Main {
 
                             System.out.println("是否新增名單: Y / N");
                             ans = keyboard.next();
-                            System.out.println("(輸入不可為空)");
+                            insert.motd();
                             if (ans.equalsIgnoreCase("Y")) {
 
                                 while (true) {
@@ -242,14 +242,14 @@ public class Main {
                                         break;
                                 }
 
-                                insert.getCount();
+                                insert.setCount(count,1);
+                                count = insert.returnCount();
+
                                 arrName = insert.setName(arrName);
                                 arrGreat = insert.setGreat(arrGreat);
                                 arrData = insert.setData(arrData);
                                 arrRush = insert.setRush(arrRush);
                                 arrTime = insert.setTime(arrTime);
-                                count = insert.returnCount();
-
 
                                 System.out.println("剛剛所新增之資料:");
                                 System.out.println("店家名稱:" + name);
@@ -257,6 +257,7 @@ public class Main {
                                 System.out.println("資訊:" + arrData[count]);
                                 System.out.println("尖峰時間:" + arrRush[count]);
                                 System.out.println("營業時間:" + arrTime[count]);
+
 
                                 exit = exit();
                                 if(exit){

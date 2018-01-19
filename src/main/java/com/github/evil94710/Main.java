@@ -177,7 +177,7 @@ public class Main {
                             System.out.println("資訊:"+arrData[counting]);
                             System.out.println("尖峰時間:"+arrRush[counting]);
                             System.out.println("營業時間:"+arrTime[counting]);
-
+                            System.out.println("(輸入不可為空)");
                             while (true){
                                 while(true){
                                     a=insert.getGreat();

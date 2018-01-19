@@ -48,10 +48,8 @@ public class insertData{
     }
 
     public void motd() {
-            System.out.println("開始新增 " + name + " 資訊");
+            System.out.println("開始新增 " + name + " 資訊(輸入不可為空)");
         }
-
-
 
     public void getCount(int counting){              /*  新增店家 總店家數+1*/
         this.count = counting ;
@@ -63,24 +61,40 @@ public class insertData{
         return count;
     }
 
-    public void getGreat(){
+    public int getGreat(){
         System.out.print("請輸入該店家評價: ");
-        great = scn.nextLine();
+        great = scn.next();
+        if(great.equals(""))
+            return 0;
+        else
+            return 1;
     }
 
-    public void getData(){
+    public int getData(){
         System.out.print("請輸入該店家資訊: ");
-        data = scn.nextLine();
+        data = scn.next();
+        if(data.equals(""))
+            return 0;
+        else
+            return 1;
     }
 
-    public void getRush(){
+    public int getRush(){
         System.out.print("請輸入該店家尖峰時間: ");
-        rushTime = scn.nextLine();
+        rushTime = scn.next();
+        if(rushTime.equals(""))
+            return 0;
+        else
+            return 1;
     }
 
-    public void getTime(){
+    public int getTime(){
         System.out.print("請輸入該店家營業時間: ");
-        time = scn.nextLine();
+        time = scn.next();
+        if(time.equals(""))
+            return 0;
+        else
+            return 1;
     }
 
     public String[] setName(String ...arrName){

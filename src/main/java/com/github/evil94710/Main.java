@@ -154,6 +154,7 @@ public class Main {
                     String ans;
                     String name;
                     int counting;
+                    int a;
 
                     while(true){
 
@@ -178,10 +179,27 @@ public class Main {
                             System.out.println("營業時間:"+arrTime[counting]);
 
                             while (true){
-                                insert.getGreat();
-                                insert.getData();
-                                insert.getRush();
-                                insert.getTime();
+                                while(true){
+                                    a=insert.getGreat();
+                                    if(a==1)
+                                        break;
+                                }
+                                while(true){
+                                    a=insert.getData();
+                                    if(a==1)
+                                        break;
+                                }
+                                while(true){
+                                    a=insert.getRush();
+                                    if(a==1)
+                                        break;
+                                }
+                                while(true){
+                                    a=insert.getTime();
+                                    if(a==1)
+                                        break;
+                                }
+
 
                                 System.out.println("是否新增資料: Y / N");
                                 ans = keyboard.next();
@@ -214,16 +232,31 @@ public class Main {
 
                             System.out.println("是否新增名單: Y / N");
                             ans = keyboard.next();
-
+                            System.out.println("(輸入不可為空)");
                             if (ans.equalsIgnoreCase("Y")) {
 
                                 while (true) {
 
-                                    insert.motd();
-                                    insert.getGreat();
-                                    insert.getData();
-                                    insert.getRush();
-                                    insert.getTime();
+                                    while(true){
+                                        a=insert.getGreat();
+                                        if(a==1)
+                                            break;
+                                    }
+                                    while(true){
+                                        a=insert.getData();
+                                        if(a==1)
+                                            break;
+                                    }
+                                    while(true){
+                                        a=insert.getRush();
+                                        if(a==1)
+                                            break;
+                                    }
+                                    while(true){
+                                        a=insert.getTime();
+                                        if(a==1)
+                                            break;
+                                    }
 
                                     System.out.println("是否新增資料: Y / N");
                                     ans = keyboard.next();

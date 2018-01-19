@@ -162,7 +162,7 @@ public class Main {
                             name = keyboard.next();
                             insert.getShopName(name);
                             if (name.equals(""))
-                                System.out.println("輸入錯誤");
+                                      ;
                             else
                                 break;
                         }

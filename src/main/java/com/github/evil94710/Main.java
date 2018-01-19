@@ -30,11 +30,7 @@ public class Main {
                 num++;
             }
         }
-        /*for(int i = 0;i < k;i++) {
-            for(int j = 0;j < 9;j++) {
-                System.out.println(list[i][j]);
-            }
-        }*/
+
         file.close();
         String[] arrName = new String[200];//  店家名稱
         String[] arrGreat = new String[200];//  評價
@@ -50,37 +46,22 @@ public class Main {
         for(int i = 0;i < k;i++) {//arrName陣列
             arrName[i] = list[i][0];
         }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrName[i]);
-		}*/
 
         for(int i = 0;i < k;i++) {//arrGreat陣列
             arrGreat[i] = list[i][1];
         }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrGreat[i]);
-		}*/
 
         for(int i = 0;i < k;i++){//arrRush陣列
             arrRush[i] = list[i][2];
         }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrRush[i]);
-		}*/
 
         for(int i = 0;i < k;i++) {//arrData陣列
             arrData[i] = list[i][3];
         }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrData[i]);
-		}*/
 
         for(int i = 0;i < k;i++) {//arrTime陣列
             arrTime[i] = list[i][4];
         }
-		/*for(int i = 0;i < k;i++) {
-			System.out.println(arrTime[i]);
-		}*/
 
         for(int i = 0;i < k;i++) {//arrClass1類別
             arrClass1[i] = list[i][5];
@@ -101,9 +82,7 @@ public class Main {
         for(int i = 0;i < k;i++) {//arrClass類別
             arrClass[i] = arrClass1[i]+arrClass2[i]+arrClass3[i]+arrClass4[i];
         }
-		/*for(int i = 0 ;i < k;i++) {
-			System.out.println(arrClass[i]);
-		}*/
+
         boolean exit;
         boolean exitMain = true;
         Scanner keyboard = new Scanner(System.in);
@@ -118,7 +97,7 @@ public class Main {
                     checkPeople people = new checkPeople();
                     while (true) {
                         String name = "";
-                        System.out.println("enter the shop name:");
+                        System.out.println("輸入店家名稱:");
                         if(keyboard.hasNext())
                             name = keyboard.next();
                         people.setShopName(name);
@@ -162,8 +141,7 @@ public class Main {
                             System.out.print("請輸入店家名稱:");
                             name = keyboard.next();
                             insert.getShopName(name);
-                            if (name.equals(""))
-                                      ;
+                            if (name.equals(""));
                             else
                                 break;
                         }
@@ -334,18 +312,13 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此功能? Y/N");
         String exit = keyboard.next();
-        if (exit.equalsIgnoreCase("Y"))
-            return true;
-        return false;
+        return exit.equalsIgnoreCase("Y");
     }
 
     private static boolean exitMain(){
         Scanner keyboard = new Scanner(System.in);
         System.out.println("是否離開此程式? Y/N");
         String exit = keyboard.next();
-        if (exit.equalsIgnoreCase("Y"))
-            return true;
-        else
-            return false;
+        return exit.equalsIgnoreCase("Y");
     }
 }

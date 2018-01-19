@@ -12,7 +12,6 @@ public class googleMap{
       Desktop d = Desktop.getDesktop();
       String url = "https://www.google.com.tw/maps/place/" + input;
       d.browse(new URI(url));
-      keyboard.close();
   }
 
 }

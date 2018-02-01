@@ -12,7 +12,7 @@ public class insertData{
     private int counting;
     Scanner scn = new Scanner(System.in);
 
-    public void getShopName(String name){    /*傳入要新增或修改的店家名稱*/
+    public void getShopName(String name){
         this.name = name;
     }
 
@@ -60,11 +60,13 @@ public class insertData{
     public int returnCount(){                     /* 回傳店家數*/
         return count;
     }
-
+    public void errorInput(){
+        System.out.println("輸入不可為空");
+    }
     public int getGreat(){
         System.out.print("請輸入該店家評價: ");
-        great = scn.next();
-        if(great.equals(""))
+        great = scn.nextLine();
+        if(great.trim().isEmpty())
             return 0;
         else
             return 1;
@@ -72,8 +74,8 @@ public class insertData{
 
     public int getData(){
         System.out.print("請輸入該店家資訊: ");
-        data = scn.next();
-        if(data.equals(""))
+        data = scn.nextLine();
+        if(data.trim().isEmpty())
             return 0;
         else
             return 1;
@@ -81,8 +83,8 @@ public class insertData{
 
     public int getRush(){
         System.out.print("請輸入該店家尖峰時間: ");
-        rushTime = scn.next();
-        if(rushTime.equals(""))
+        rushTime = scn.nextLine();
+        if(rushTime.trim().isEmpty())
             return 0;
         else
             return 1;
@@ -90,8 +92,8 @@ public class insertData{
 
     public int getTime(){
         System.out.print("請輸入該店家營業時間: ");
-        time = scn.next();
-        if(time.equals(""))
+        time = scn.nextLine();
+        if(time.trim().isEmpty())
             return 0;
         else
             return 1;

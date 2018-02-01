@@ -12,7 +12,7 @@ public class D0511189 {
     }
 
     public void determine(String[] arrName, String[] arrClass, int count) {
-        int i = 0, k = 0, s , j, p;
+        int i = 0, s , j, p;
         String[] arr = new String[200];
         int[] rand = new int[5];
         String Condition = String.valueOf(condition);

@@ -160,22 +160,30 @@ public class Main {
                             while (true){
                                 while(true){
                                     a=insert.getGreat();
-                                    if(a==1)
+                                    if(a==0)
+                                        insert.errorInput();
+                                    else
                                         break;
                                 }
                                 while(true){
                                     a=insert.getData();
-                                    if(a==1)
+                                    if(a==0)
+                                        insert.errorInput();
+                                    else
                                         break;
                                 }
                                 while(true){
                                     a=insert.getRush();
-                                    if(a==1)
+                                    if(a==0)
+                                        insert.errorInput();
+                                    else
                                         break;
                                 }
                                 while(true){
                                     a=insert.getTime();
-                                    if(a==1)
+                                    if(a==0)
+                                        insert.errorInput();
+                                    else
                                         break;
                                 }
 
@@ -202,11 +210,11 @@ public class Main {
                             System.out.println("尖峰時間:"+arrRush[counting]);
                             System.out.println("營業時間:"+arrTime[counting]);
 
-                            System.out.print("新增資料成功, 是否離開此功能? Y/N");
-                            ans = keyboard.next();
-                            if (ans.equalsIgnoreCase("Y"))
+                            System.out.print("新增資料成功 ");
+                            exit = exit();
+                            if(exit){
                                 break;
-
+                            }
                         } else {
 
                             System.out.println("是否新增名單: Y / N");
@@ -218,22 +226,30 @@ public class Main {
 
                                     while(true){
                                         a=insert.getGreat();
-                                        if(a==1)
+                                        if(a==0)
+                                            insert.errorInput();
+                                        else
                                             break;
                                     }
                                     while(true){
                                         a=insert.getData();
-                                        if(a==1)
+                                        if(a==0)
+                                            insert.errorInput();
+                                        else
                                             break;
                                     }
                                     while(true){
                                         a=insert.getRush();
-                                        if(a==1)
+                                        if(a==0)
+                                            insert.errorInput();
+                                        else
                                             break;
                                     }
                                     while(true){
                                         a=insert.getTime();
-                                        if(a==1)
+                                        if(a==0)
+                                            insert.errorInput();
+                                        else
                                             break;
                                     }
 
@@ -311,15 +327,30 @@ public class Main {
 
     private static boolean exit(){
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("是否離開此功能? Y/N");
-        String exit = keyboard.next();
-        return exit.equalsIgnoreCase("Y");
+        while (true){
+            System.out.println("是否離開此功能? Y/N");
+            String exit = keyboard.next();
+            if(exit.equalsIgnoreCase("Y"))
+                return true;
+            else if(exit.equalsIgnoreCase("N"))
+                return false;
+            else
+                continue;
+        }
     }
 
     private static boolean exitMain(){
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("是否離開此程式? Y/N");
-        String exit = keyboard.next();
-        return exit.equalsIgnoreCase("Y");
+        while (true){
+            System.out.println("是否離開此程式? Y/N");
+            String exit = keyboard.next();
+            if(exit.equalsIgnoreCase("Y"))
+                return true;
+            else if(exit.equalsIgnoreCase("N"))
+                return false;
+            else
+                continue;
+        }
+
     }
 }
